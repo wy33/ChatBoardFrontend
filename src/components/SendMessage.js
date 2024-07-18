@@ -7,8 +7,16 @@ export default function SendMessage() {
         message: ""
     });
 
-    // Visuals when typing
-    const handleChange = (e) => {
+    // Visuals when typing in name field
+    const handleNameChange = (e) => {
+        const { name, value } = e.target;
+        if (value.length <= 30) {   // Max name length is 30
+            setFormData((prev) => ({ ...prev, [name]: value,}));
+        }
+    }
+
+    // Visuals when typing in message field
+    const handleMessageChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value,}));
     }
@@ -49,7 +57,7 @@ export default function SendMessage() {
                         type="text"
                         name="name"
                         value={formData.name}
-                        onChange={handleChange}
+                        onChange={handleNameChange}
                     />
                 </div>
                 <div>
@@ -60,7 +68,7 @@ export default function SendMessage() {
                         type="text"
                         name="message"
                         value={formData.message}
-                        onChange={handleChange}
+                        onChange={handleMessageChange}
                     />
                 </div>
                 <button className="submit-button" type="submit">Send</button>
