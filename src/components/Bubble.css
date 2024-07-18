@@ -1,0 +1,18 @@
+.bubble {
+    padding: 10px;
+    background-color: #00c3ff;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.name {
+    text-align: right;
+    font-weight: bold;
+    color: white;
+}
+
+.message {
+    text-align: left;
+    color: white;
+    word-wrap: break-word;  /* Message becomes multi-line and the bubble expands vertically */
+}
